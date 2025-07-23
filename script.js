@@ -123,6 +123,12 @@ if (brandMoreBtn && brandCloseBtn && brandShort && brandFull) {
         brandFull.style.display = 'block';
         brandMoreBtn.style.display = 'none';
         brandCloseBtn.style.display = 'inline-block';
+        
+        // 모바일에서 추가 여백 제공
+        if (window.innerWidth <= 600) {
+            const brandSection = document.querySelector('.brand-history-section');
+            brandSection.style.paddingBottom = '80px';
+        }
     });
     brandCloseBtn.addEventListener('click', function() {
         // 닫기를 누르면 4줄만 보이고, 더보기 버튼을 다시 보여줘요
@@ -130,5 +136,11 @@ if (brandMoreBtn && brandCloseBtn && brandShort && brandFull) {
         brandFull.style.display = 'none';
         brandMoreBtn.style.display = 'inline-block';
         brandCloseBtn.style.display = 'none';
+        
+        // 모바일에서 원래 패딩으로 복원
+        if (window.innerWidth <= 600) {
+            const brandSection = document.querySelector('.brand-history-section');
+            brandSection.style.paddingBottom = '50px';
+        }
     });
 } 
