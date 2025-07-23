@@ -108,39 +108,60 @@ moreBtns.forEach((btn) => {
 }); 
 
 // =========================
-// 브랜드 히스토리 더보기/닫기 버튼 기능 구현
+// 브랜드 히스토리 더보기/닫기 버튼 기능 구현 (사장님 인사말)
 // =========================
-// 더보기, 닫기 버튼을 찾아요
+// 웹페이지에서 더보기, 닫기 버튼을 찾아요
 const brandMoreBtn = document.querySelector('.brand-more-btn');
+// 웹페이지에서 닫기 버튼을 찾아요
 const brandCloseBtn = document.querySelector('.brand-close-btn');
+// 짧게 보이는 텍스트 부분을 찾아요 (일부만 보이는 부분)
 const brandShort = document.querySelector('.brand-history-desc.short');
+// 전체 텍스트 부분을 찾아요 (더보기 클릭시 보이는 부분)
 const brandFull = document.querySelector('.brand-history-desc.full');
 
+// 모든 버튼과 텍스트가 제대로 있는지 확인해요
 if (brandMoreBtn && brandCloseBtn && brandShort && brandFull) {
+    // 더보기 버튼을 클릭했을 때 실행되는 기능
     brandMoreBtn.addEventListener('click', function() {
-        // 더보기를 누르면 전체 설명을 보여주고, 닫기 버튼을 보여줘요
+        // 짧은 텍스트는 숨겨요 (안보이게)
         brandShort.style.display = 'none';
+        // 전체 텍스트는 보여줘요 (보이게)
         brandFull.style.display = 'block';
+        // 더보기 버튼은 숨겨요
         brandMoreBtn.style.display = 'none';
-        brandCloseBtn.style.display = 'inline-block';
+        // 닫기 버튼은 보여줘요
+        brandCloseBtn.style.display = 'inline-flex';
         
-        // 모바일에서 추가 여백 제공
+        // 모바일과 웹 모두에서 추가 여백을 제공해요 (텍스트가 길어져서)
+        const brandSection = document.querySelector('.brand-history-section');
         if (window.innerWidth <= 600) {
-            const brandSection = document.querySelector('.brand-history-section');
+            // 모바일에서는 더 많은 여백을 줘요
             brandSection.style.paddingBottom = '80px';
+        } else {
+            // 웹에서도 여백을 늘려줘요
+            brandSection.style.paddingBottom = '100px';
         }
     });
+    
+    // 닫기 버튼을 클릭했을 때 실행되는 기능
     brandCloseBtn.addEventListener('click', function() {
-        // 닫기를 누르면 4줄만 보이고, 더보기 버튼을 다시 보여줘요
+        // 짧은 텍스트는 다시 보여줘요 (일부만 보이는 상태로)
         brandShort.style.display = '';
+        // 전체 텍스트는 숨겨요
         brandFull.style.display = 'none';
-        brandMoreBtn.style.display = 'inline-block';
+        // 더보기 버튼은 다시 보여줘요
+        brandMoreBtn.style.display = 'inline-flex';
+        // 닫기 버튼은 숨겨요
         brandCloseBtn.style.display = 'none';
         
-        // 모바일에서 원래 패딩으로 복원
+        // 모바일과 웹 모두에서 원래 여백으로 돌려놔요
+        const brandSection = document.querySelector('.brand-history-section');
         if (window.innerWidth <= 600) {
-            const brandSection = document.querySelector('.brand-history-section');
+            // 모바일 원래 여백
             brandSection.style.paddingBottom = '50px';
+        } else {
+            // 웹 원래 여백
+            brandSection.style.paddingBottom = '80px';
         }
     });
 } 

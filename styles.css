@@ -5,9 +5,9 @@
     box-sizing: border-box;
 }
 
-/* 기본 폰트 설정 */
+/* 기본 폰트 설정 - 넥슨폰트 웹폰트 사용 */
 html, body {
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'NeXonGothic', 'Noto Sans KR', sans-serif;
     background-color: white;
     overflow-x: hidden;
     width: 100%;
@@ -47,7 +47,7 @@ html, body {
     color: #1a1a1a;
     letter-spacing: -0.5px;
     text-transform: uppercase;
-    font-family: 'Montserrat', 'Pretendard', sans-serif;
+    font-family: 'Montserrat', 'NeXonGothic', sans-serif;
     background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -103,13 +103,13 @@ html, body {
     color: white;
 }
 
-/* 히어로 섹션 전체 */
+/* 히어로 섹션 전체 - 넥슨폰트 사용 */
 .hero {
     width: 100vw;
     min-height: 500px;
     position: relative;
     overflow: hidden;
-    font-family: 'Pretendard', 'Montserrat', sans-serif;
+    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
 }
 
 /* 캐러셀 컨테이너 */
@@ -246,13 +246,13 @@ html, body {
 }
 
 /* =========================
-   제품(Product) 섹션 스타일
+   제품(Product) 섹션 스타일 - 넥슨폰트 사용
    ========================= */
 .product-section {
     width: 100vw;
     background: #fafafa;
     padding: 60px 0 60px 0;
-    font-family: 'Pretendard', 'Montserrat', sans-serif;
+    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
 }
 
 .product-container {
@@ -387,13 +387,13 @@ html, body {
 }
 
 /* =========================
-   리뷰(Review) 섹션 스타일
+   리뷰(Review) 섹션 스타일 - 넥슨폰트 사용
    ========================= */
 .review-section {
     width: 100vw;
     background: #fff;
     padding: 60px 0 60px 0;
-    font-family: 'Pretendard', 'Montserrat', sans-serif;
+    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
 }
 
 .review-container {
@@ -470,13 +470,13 @@ html, body {
 }
 
 /* =========================
-   브랜드 히스토리(사장님 인사말) 섹션 스타일
+   브랜드 히스토리(사장님 인사말) 섹션 스타일 - 넥슨폰트 사용
    ========================= */
 .brand-history-section {
     width: 100vw;
     background: #f5f5f5;
     padding: 60px 0 80px 0;
-    font-family: 'Pretendard', 'Montserrat', sans-serif;
+    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
     position: relative;
     z-index: 1;
 }
@@ -527,10 +527,11 @@ html, body {
     letter-spacing: -1px;
 }
 
+/* 브랜드 히스토리 설명 - 일부만 보이게 표시 (3줄) */
 .brand-history-desc {
     font-size: 1.08rem;
     color: #333;
-    line-height: 1.7;
+    line-height: 1.6; /* 줄간격을 조금 줄여서 보기 좋게 */
     margin-bottom: 18px;
     word-break: keep-all;
     white-space: pre-line;
@@ -539,63 +540,69 @@ html, body {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+/* 브랜드 히스토리 전체 텍스트 (더보기 클릭시) */
 .brand-history-desc.full {
     -webkit-line-clamp: unset;
     display: block;
+    line-height: 1.6; /* 전체 텍스트도 동일한 줄간격 적용 */
 }
 
-    .brand-more-btn, .brand-close-btn {
-        background: #222;
-        color: #fff;
-        border: none;
-        border-radius: 20px;
-        padding: 10px 26px;
-        font-size: 1rem;
-        font-weight: 600;
-        margin-right: 8px;
-        margin-bottom: 15px;
-        cursor: pointer;
-        transition: background 0.2s, color 0.2s;
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
+    /* 브랜드 히스토리 더보기/닫기 버튼 스타일 (터치하기 쉽게 만듦) */
+.brand-more-btn, .brand-close-btn {
+    background: #222; /* 검은색 배경 */
+    color: #fff; /* 흰색 글자 */
+    border: none; /* 테두리 없음 */
+    border-radius: 20px; /* 둥근 모서리 */
+    padding: 10px 26px; /* 버튼 안쪽 여백 */
+    font-size: 1rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    margin-right: 8px; /* 오른쪽 여백 */
+    margin-bottom: 15px; /* 아래쪽 여백 */
+    cursor: pointer; /* 마우스 올리면 손가락 모양 */
+    transition: background 0.2s, color 0.2s; /* 색깔 변화 부드럽게 */
+    min-height: 44px; /* 최소 높이 (터치하기 쉽게) */
+    display: inline-flex; /* 가로 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+/* 더보기/닫기 버튼에 마우스 올렸을 때 색깔 변화 */
 .brand-more-btn:hover, .brand-close-btn:hover {
-    background: #007bff;
-    color: #fff;
+    background: #007bff; /* 파란색으로 변함 */
+    color: #fff; /* 글자는 흰색 유지 */
 }
 
+/* 연락처 정보 박스 스타일 (눈에 잘 띄게 만듦) */
 .brand-contact {
-    margin-top: 18px;
-    font-size: 1.15rem;
-    color: #d32f2f;
-    font-weight: 700;
-    background: #fffbe7;
-    border-radius: 12px;
-    padding: 14px 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    text-align: center;
-    width: 100%;
+    margin-top: 18px; /* 위쪽 여백 */
+    font-size: 1.15rem; /* 글자 크기 */
+    color: #d32f2f; /* 빨간색 글자 */
+    font-weight: 700; /* 글자 굵게 */
+    background: #fffbe7; /* 연한 노란색 배경 */
+    border-radius: 12px; /* 둥근 모서리 */
+    padding: 14px 18px; /* 안쪽 여백 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* 그림자 효과 */
+    text-align: center; /* 글자 가운데 정렬 */
+    width: 100%; /* 가로 크기 100% */
 }
+/* 전화번호 스타일 (더 크고 파랗게) */
 .brand-contact-phone {
-    font-size: 1.25rem;
-    color: #1976d2;
-    font-weight: 900;
+    font-size: 1.25rem; /* 전화번호는 더 큰 글자 */
+    color: #1976d2; /* 파란색 */
+    font-weight: 900; /* 매우 굵게 */
 }
 
 /* =========================
-   푸터(Footer) 스타일
+   푸터(Footer) 스타일 - 넥슨폰트 사용
    ========================= */
 .footer {
     width: 100vw;
     background: #222;
     color: #fff;
     padding: 40px 0 20px 0;
-    font-family: 'Pretendard', 'Montserrat', sans-serif;
+    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
     position: relative;
     z-index: 10;
     margin-top: 0;
@@ -844,11 +851,12 @@ html, body {
         min-height: auto;
         margin-bottom: 20px;
     }
+    /* 모바일에서 브랜드 히스토리 텍스트 스타일 */
     .brand-history-desc,
     .brand-history-desc.full {
         color: #222;
         font-size: 1.05rem;
-        line-height: 1.8;
+        line-height: 1.6; /* 모바일에서도 동일한 줄간격 적용 */
         background: transparent;
         overflow: visible;
         display: block;
@@ -860,9 +868,10 @@ html, body {
         box-sizing: border-box;
         margin-bottom: 16px;
     }
+    /* 모바일에서 브랜드 히스토리 일부만 보이기 (4줄) */
     .brand-history-desc.short {
         display: -webkit-box;
-        -webkit-line-clamp: 6;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
         word-break: keep-all;
@@ -897,6 +906,7 @@ html, body {
         font-size: 0.9rem;
         margin-top: 12px;
     }
+    /* 모바일에서 브랜드 히스토리 전체 텍스트 최종 설정 */
     .brand-history-desc.full {
         display: block !important;
         -webkit-line-clamp: unset !important;
@@ -906,6 +916,7 @@ html, body {
         height: auto !important;
         margin-bottom: 20px !important;
         padding-bottom: 20px !important;
+        line-height: 1.6 !important; /* 모바일 전체 텍스트도 줄간격 조정 */
     }
 } 
 
