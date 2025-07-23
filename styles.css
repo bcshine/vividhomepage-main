@@ -1,945 +1,970 @@
-/* 기본 스타일 초기화 */
+/* ===================================
+   비비드뷰티하우스 웹사이트 스타일시트
+   - 넥슨폰트 웹폰트 사용
+   - 반응형 디자인 (모바일/웹 호환)
+   - 초등생도 이해할 수 있는 주석
+   =================================== */
+
+/* 기본 스타일 초기화 (모든 요소의 여백과 패딩을 0으로) */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* 바깥 여백 제거 */
+    padding: 0; /* 안쪽 여백 제거 */
+    box-sizing: border-box; /* 테두리와 패딩을 포함한 크기 계산 */
 }
 
-/* 기본 폰트 설정 - 넥슨폰트 웹폰트 사용 */
+/* 기본 폰트 설정 (넥슨폰트 웹폰트 사용) */
 html, body {
-    font-family: 'NeXonGothic', 'Noto Sans KR', sans-serif;
-    background-color: white;
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100vw;
-    margin: 0;
-    padding: 0;
-    position: relative;
+    font-family: 'NeXonGothic', 'Noto Sans KR', sans-serif; /* 넥슨폰트를 기본으로 */
+    background-color: white; /* 배경색은 흰색 */
+    overflow-x: hidden; /* 가로 스크롤 숨김 */
+    width: 100%; /* 가로 크기 100% */
+    max-width: 100vw; /* 최대 가로 크기는 화면 너비 */
+    line-height: 1.6; /* 줄간격 설정 */
 }
 
-/* 헤더 스타일링 */
+/* ===================================
+   헤더 섹션 스타일 (가로로 나란히 배치)
+   =================================== */
+
+/* 헤더 전체 컨테이너 */
 .header {
-    display: flex;
-    align-items: center;
-    padding: 15px 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* 가로로 나란히 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: space-between; /* 양쪽 끝과 가운데로 배치 */
+    padding: 15px 50px; /* 안쪽 여백 */
+    background-color: white; /* 배경색 흰색 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    position: sticky; /* 스크롤해도 상단에 고정 */
+    top: 0; /* 맨 위에 위치 */
+    z-index: 100; /* 다른 요소보다 위에 표시 */
 }
 
-/* 로고와 브랜드 그룹 */
+/* 로고와 브랜드 이름 그룹 */
 .logo-container {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; /* 가로로 나란히 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 15px; /* 로고와 텍스트 사이 간격 */
 }
 
 /* 로고 이미지 */
 .logo {
-    width: 195px;
-    height: auto;
-    object-fit: contain;
+    width: 180px; /* 로고 가로 크기 */
+    height: auto; /* 세로 크기는 자동 */
+    object-fit: contain; /* 비율 유지하며 맞춤 */
 }
 
-/* 브랜드 이름 */
+/* 브랜드 이름 텍스트 */
 .brand-name {
-    font-size: 32px;
-    font-weight: 600;
-    color: #1a1a1a;
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
-    font-family: 'Montserrat', 'NeXonGothic', sans-serif;
-    background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-    white-space: nowrap;
+    font-size: 28px; /* 글자 크기 */
+    font-weight: 700; /* 글자 굵기 */
+    color: #1a1a1a; /* 글자 색깔 */
+    font-family: 'Montserrat', 'NeXonGothic', sans-serif; /* 영문폰트 우선 */
+    text-transform: uppercase; /* 대문자로 변환 */
+    letter-spacing: -0.5px; /* 글자 간격 */
+    margin: 0; /* 여백 제거 */
 }
 
 /* 네비게이션 메뉴 */
 .nav-menu {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    margin: 0 40px; /* 좌우 여백 추가 */
+    display: flex; /* 가로로 배치 */
+    justify-content: center; /* 가운데 정렬 */
 }
 
 .nav-menu ul {
-    display: flex;
-    list-style: none;
-    gap: 60px; /* 메뉴 항목 간격 증가 */
-    padding: 0;
-    margin: 0;
+    display: flex; /* 가로로 나란히 */
+    list-style: none; /* 목록 점 제거 */
+    gap: 40px; /* 메뉴 간격 */
 }
 
 .nav-menu a {
-    text-decoration: none;
-    color: #333;
-    font-size: 17px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    white-space: nowrap;
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 글자 색깔 */
+    font-size: 16px; /* 글자 크기 */
+    font-weight: 500; /* 글자 굵기 */
+    transition: color 0.3s ease; /* 색깔 변화 부드럽게 */
+    padding: 10px 5px; /* 클릭 영역 확장 */
 }
 
 .nav-menu a:hover {
-    color: #007bff;
+    color: #007bff; /* 마우스 올렸을 때 파란색 */
 }
 
 /* 로그인 버튼 */
 .login-btn {
-    flex-shrink: 0;
-    background-color: white;
-    border: 1px solid #333;
-    border-radius: 25px;
-    padding: 10px 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    white-space: nowrap;
+    background-color: white; /* 배경 흰색 */
+    color: #333; /* 글자 검은색 */
+    border: 2px solid #333; /* 검은색 테두리 */
+    border-radius: 25px; /* 둥근 모서리 */
+    padding: 10px 25px; /* 안쪽 여백 */
+    font-size: 14px; /* 글자 크기 */
+    font-weight: 500; /* 글자 굵기 */
+    cursor: pointer; /* 마우스 올리면 손가락 모양 */
+    transition: all 0.3s ease; /* 모든 변화 부드럽게 */
 }
 
 .login-btn:hover {
-    background-color: #333;
-    color: white;
+    background-color: #333; /* 마우스 올리면 검은색 배경 */
+    color: white; /* 글자는 흰색으로 */
 }
 
-/* 히어로 섹션 전체 - 넥슨폰트 사용 */
+/* ===================================
+   히어로 섹션 스타일 (슬라이딩 캐러셀)
+   =================================== */
+
+/* 히어로 섹션 전체 */
 .hero {
-    width: 100vw;
-    min-height: 500px;
-    position: relative;
-    overflow: hidden;
-    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
+    width: 100vw; /* 화면 가로 전체 */
+    min-height: 500px; /* 최소 높이 */
+    position: relative; /* 상대적 위치 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
 }
 
 /* 캐러셀 컨테이너 */
 .carousel {
-    width: 100vw;
-    height: 70vh;
-    min-height: 400px;
-    max-height: 700px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 슬라이드들 */
-.carousel-slides {
-    width: 100vw;
-    height: 100%;
-    position: relative;
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
-}
-
-/* 각 슬라이드 */
-.carousel-slide {
-    min-width: 100vw;
-    height: 70vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transition: opacity 0.5s;
-}
-
-/* 슬라이드 내용 */
-.slide-content {
-    background: rgba(0,0,0,0.35); /* 반투명 배경 */
-    border-radius: 20px;
-    padding: 40px 32px 32px 32px;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.15);
-    max-width: 480px;
-    margin: 0 auto;
-}
-
-.slide-brand {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-}
-
-.slide-content h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-}
-
-.slide-content p {
-    font-size: 1.1rem;
-    margin-bottom: 24px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-}
-
-/* 구매하기 버튼 */
-.buy-btn {
-    display: inline-block;
-    background: #fff;
-    color: #222;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 36px;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: background 0.2s, color 0.2s;
-    cursor: pointer;
-}
-.buy-btn:hover {
-    background: #222;
-    color: #fff;
-}
-
-/* 캐러셀 화살표 */
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    background: rgba(255,255,255,0.95);
-    color: #222;
-    border: none;
-    font-size: 2.5rem;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0.85;
-    transition: background 0.2s, opacity 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    user-select: none;
-}
-.carousel-arrow.left {
-    left: 32px;
-}
-.carousel-arrow.right {
-    right: 32px;
-}
-.carousel-arrow:hover {
-    background: #222;
-    color: #fff;
-    opacity: 1;
-}
-
-/* 활성 슬라이드만 보이게 */
-.carousel-slide {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    left: 0; top: 0;
-    width: 100vw;
-    height: 100%;
-}
-.carousel-slide.active {
-    opacity: 1;
-    pointer-events: auto;
-    position: relative;
-    z-index: 1;
-}
-
-/* =========================
-   제품(Product) 섹션 스타일 - 넥슨폰트 사용
-   ========================= */
-.product-section {
-    width: 100vw;
-    background: #fafafa;
-    padding: 60px 0 60px 0;
-    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
-}
-
-.product-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.product-main-img {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 0 auto 32px auto;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-.product-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #111;
-    text-align: center;
-    margin-bottom: 40px;
-    letter-spacing: -1px;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 32px 16px;
-    justify-items: center;
-}
-
-.product-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    padding: 24px 18px 18px 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 0;
-    min-height: 0;
-}
-
-.product-img {
-    width: 100%;
-    max-width: 220px;
-    aspect-ratio: 3/4;
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    object-fit: cover;
-    margin-left: 3px;
-    margin-right: 3px;
-    background: #f5f5f5;
-}
-
-.product-designer {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 10px;
-}
-
-.product-desc {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 10px;
-    text-align: left;
-    line-height: 1.6;
-    max-width: 320px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-.product-desc.full {
-    -webkit-line-clamp: unset;
-    display: block;
-}
-
-.more-btn {
-    background: #222;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 26px;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 8px;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-.more-btn:hover {
-    background: #007bff;
-    color: #fff;
-}
-
-.product-intro-box {
-  background: #fffbe7;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-  margin-top: 8px;
-  padding: 8px 10px 6px 10px;
-  text-align: left;
-  max-width: 220px;
-  font-size: 0.92rem;
-}
-.product-intro-title {
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: #d32f2f;
-  margin-bottom: 4px;
-}
-.product-intro-list {
-  padding-left: 16px;
-  margin: 0;
-  color: #333;
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-.product-intro-list li {
-  margin-bottom: 2px;
-}
-
-/* =========================
-   리뷰(Review) 섹션 스타일 - 넥슨폰트 사용
-   ========================= */
-.review-section {
-    width: 100vw;
-    background: #fff;
-    padding: 60px 0 60px 0;
-    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
-}
-
-.review-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.review-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #111;
-    text-align: center;
-    margin-bottom: 40px;
-    letter-spacing: -1px;
-}
-
-.review-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 32px 16px;
-    justify-items: center;
-}
-
-.review-card {
-    background: #fafafa;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    padding: 28px 18px 18px 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 0;
-    min-height: 0;
-    text-align: center;
-}
-
-.review-stars {
-    color: #FFD600;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 4px #fff, 0 0 2px #FFD600;
-}
-
-.review-text {
-    font-size: 1.05rem;
-    color: #333;
-    line-height: 1.7;
-    word-break: keep-all;
-    white-space: pre-line;
-    margin-bottom: 0;
-}
-
-.review-meta {
-  font-size: 0.98rem;
-  color: #1976d2;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.review-extra {
-  font-size: 0.92rem;
-  color: #888;
-  margin-bottom: 6px;
-}
-.review-date {
-  margin-right: 8px;
-}
-.review-user {
-  color: #009688;
-  font-weight: 500;
-}
-
-/* =========================
-   브랜드 히스토리(사장님 인사말) 섹션 스타일 - 넥슨폰트 사용
-   ========================= */
-.brand-history-section {
-    width: 100vw;
-    background: #f5f5f5;
-    padding: 60px 0 80px 0;
-    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
-    position: relative;
-    z-index: 1;
-}
-
-.brand-history-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-}
-
-.brand-history-img-box {
-    flex: 1 1 320px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.brand-history-img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    object-fit: cover;
-}
-
-.brand-history-text-box {
-    flex: 2 1 500px;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    padding: 36px 32px 32px 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 0;
-    min-height: 0;
-    position: relative;
-}
-
-.brand-history-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #111;
-    margin-bottom: 18px;
-    letter-spacing: -1px;
-}
-
-/* 브랜드 히스토리 설명 - 일부만 보이게 표시 (3줄) */
-.brand-history-desc {
-    font-size: 1.08rem;
-    color: #333;
-    line-height: 1.6; /* 줄간격을 조금 줄여서 보기 좋게 */
-    margin-bottom: 18px;
-    word-break: keep-all;
-    white-space: pre-line;
-    text-align: left;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-/* 브랜드 히스토리 전체 텍스트 (더보기 클릭시) */
-.brand-history-desc.full {
-    -webkit-line-clamp: unset;
-    display: block;
-    line-height: 1.6; /* 전체 텍스트도 동일한 줄간격 적용 */
-}
-
-/* 브랜드 히스토리 더보기 버튼 스타일 (제품 가이드와 동일한 방식) */
-.brand-more-btn {
-    background: #222; /* 검은색 배경 */
-    color: #fff; /* 흰색 글자 */
-    border: none; /* 테두리 없음 */
-    border-radius: 20px; /* 둥근 모서리 */
-    padding: 10px 26px; /* 버튼 안쪽 여백 */
-    font-size: 1rem; /* 글자 크기 */
-    font-weight: 600; /* 글자 굵기 */
-    margin-top: 8px; /* 위쪽 여백 (제품 가이드와 동일) */
-    margin-bottom: 15px; /* 아래쪽 여백 */
-    cursor: pointer; /* 마우스 올리면 손가락 모양 */
-    transition: background 0.2s, color 0.2s; /* 색깔 변화 부드럽게 */
-    min-height: 44px; /* 최소 높이 (터치하기 쉽게) */
-    display: inline-flex; /* 가로 정렬 */
+    width: 100vw; /* 화면 가로 전체 */
+    height: 70vh; /* 화면 높이의 70% */
+    min-height: 400px; /* 최소 높이 */
+    max-height: 700px; /* 최대 높이 */
+    position: relative; /* 상대적 위치 */
+    display: flex; /* 플렉스 배치 */
     align-items: center; /* 세로 가운데 정렬 */
     justify-content: center; /* 가로 가운데 정렬 */
 }
-/* 더보기 버튼에 마우스 올렸을 때 색깔 변화 (제품 가이드와 동일) */
-.brand-more-btn:hover {
-    background: #007bff; /* 파란색으로 변함 */
-    color: #fff; /* 글자는 흰색 유지 */
+
+/* 슬라이드들을 담는 컨테이너 */
+.carousel-slides {
+    width: 100vw; /* 화면 가로 전체 */
+    height: 100%; /* 높이 100% */
+    position: relative; /* 상대적 위치 */
 }
 
-/* 연락처 정보 박스 스타일 (눈에 잘 띄게 만듦) */
-.brand-contact {
-    margin-top: 18px; /* 위쪽 여백 */
-    font-size: 1.15rem; /* 글자 크기 */
-    color: #d32f2f; /* 빨간색 글자 */
-    font-weight: 700; /* 글자 굵게 */
-    background: #fffbe7; /* 연한 노란색 배경 */
-    border-radius: 12px; /* 둥근 모서리 */
-    padding: 14px 18px; /* 안쪽 여백 */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* 그림자 효과 */
+/* 각각의 슬라이드 */
+.carousel-slide {
+    position: absolute; /* 절대적 위치 */
+    top: 0; /* 맨 위에 위치 */
+    left: 0; /* 맨 왼쪽에 위치 */
+    width: 100vw; /* 화면 가로 전체 */
+    height: 100%; /* 높이 100% */
+    background-size: cover; /* 배경 이미지 꽉 채우기 */
+    background-position: center; /* 배경 이미지 가운데 정렬 */
+    display: flex; /* 플렉스 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    opacity: 0; /* 투명하게 (안보이게) */
+    transition: opacity 0.6s ease; /* 나타나기 효과 */
+}
+
+/* 활성화된 슬라이드만 보이게 */
+.carousel-slide.active {
+    opacity: 1; /* 불투명하게 (보이게) */
+    z-index: 1; /* 다른 슬라이드 위에 표시 */
+}
+
+/* 슬라이드 내용 (텍스트와 버튼) */
+.slide-content {
+    background: rgba(0, 0, 0, 0.4); /* 반투명 검은색 배경 */
+    border-radius: 20px; /* 둥근 모서리 */
+    padding: 40px 30px; /* 안쪽 여백 */
+    text-align: center; /* 글자 가운데 정렬 */
+    color: white; /* 글자 흰색 */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+    max-width: 500px; /* 최대 가로 크기 */
+    margin: 0 20px; /* 좌우 여백 */
+}
+
+/* 슬라이드 브랜드 이름 */
+.slide-brand {
+    font-size: 2rem; /* 글자 크기 */
+    font-weight: 700; /* 글자 굵기 */
+    margin-bottom: 15px; /* 아래 여백 */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* 글자 그림자 */
+}
+
+/* 슬라이드 제목 */
+.slide-content h2 {
+    font-size: 1.4rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    margin-bottom: 12px; /* 아래 여백 */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* 글자 그림자 */
+}
+
+/* 슬라이드 설명 */
+.slide-content p {
+    font-size: 1rem; /* 글자 크기 */
+    margin-bottom: 25px; /* 아래 여백 */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7); /* 글자 그림자 */
+    line-height: 1.5; /* 줄간격 */
+}
+
+/* 히어로 예약하기 버튼 */
+.hero-btn {
+    display: inline-block; /* 인라인 블록 */
+    background: white; /* 흰색 배경 */
+    color: #222; /* 검은색 글자 */
+    font-size: 1rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    border: none; /* 테두리 없음 */
+    border-radius: 25px; /* 둥근 모서리 */
+    padding: 12px 30px; /* 안쪽 여백 */
+    text-decoration: none; /* 밑줄 제거 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    transition: all 0.3s ease; /* 모든 변화 부드럽게 */
+    cursor: pointer; /* 마우스 올리면 손가락 모양 */
+}
+
+.hero-btn:hover {
+    background: #222; /* 마우스 올리면 검은색 배경 */
+    color: white; /* 글자는 흰색으로 */
+    transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+}
+
+/* 캐러셀 화살표 버튼 */
+.carousel-arrow {
+    position: absolute; /* 절대적 위치 */
+    top: 50%; /* 세로 가운데 */
+    transform: translateY(-50%); /* 정확한 가운데 맞춤 */
+    z-index: 10; /* 다른 요소 위에 표시 */
+    background: rgba(255, 255, 255, 0.9); /* 반투명 흰색 배경 */
+    color: #222; /* 검은색 글자 */
+    border: none; /* 테두리 없음 */
+    font-size: 2rem; /* 글자 크기 */
+    width: 50px; /* 가로 크기 */
+    height: 50px; /* 세로 크기 */
+    border-radius: 50%; /* 원형 모양 */
+    cursor: pointer; /* 마우스 올리면 손가락 모양 */
+    transition: all 0.3s ease; /* 모든 변화 부드럽게 */
+    display: flex; /* 플렉스 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+
+.carousel-arrow.left {
+    left: 30px; /* 왼쪽에서 30px 떨어진 위치 */
+}
+
+.carousel-arrow.right {
+    right: 30px; /* 오른쪽에서 30px 떨어진 위치 */
+}
+
+.carousel-arrow:hover {
+    background: #222; /* 마우스 올리면 검은색 배경 */
+    color: white; /* 글자는 흰색으로 */
+    transform: translateY(-50%) scale(1.1); /* 살짝 크게 */
+}
+
+/* ===================================
+   디자이너 소개 섹션 스타일 (2x2 그리드)
+   =================================== */
+
+/* 디자이너 소개 섹션 전체 */
+.product-section {
+    width: 100vw; /* 화면 가로 전체 */
+    background: #fafafa; /* 연한 회색 배경 */
+    padding: 80px 0; /* 위아래 여백 */
+}
+
+/* 디자이너 소개 컨테이너 */
+.product-container {
+    max-width: 1200px; /* 최대 가로 크기 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+}
+
+/* 대표 이미지 */
+.product-main-img {
+    width: 100%; /* 가로 크기 100% */
+    max-width: 600px; /* 최대 가로 크기 */
+    display: block; /* 블록 요소로 */
+    margin: 0 auto 40px auto; /* 가운데 정렬, 아래 여백 */
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+/* 디자이너 소개 타이틀 */
+.product-title {
+    font-size: 2.5rem; /* 글자 크기 */
+    font-weight: 800; /* 글자 굵기 */
+    color: #111; /* 글자 색깔 */
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 50px; /* 아래 여백 */
+    letter-spacing: -1px; /* 글자 간격 */
+}
+
+/* 디자이너 2x2 그리드 */
+.product-grid {
+    display: grid; /* 그리드 배치 */
+    grid-template-columns: 1fr 1fr; /* 2열로 배치 */
+    grid-template-rows: 1fr 1fr; /* 2행으로 배치 */
+    gap: 30px; /* 카드 사이 간격 */
+    justify-items: center; /* 가로 가운데 정렬 */
+}
+
+/* 각 디자이너 카드 */
+.product-card {
+    background: white; /* 흰색 배경 */
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 그림자 효과 */
+    padding: 25px 20px; /* 안쪽 여백 */
+    display: flex; /* 플렉스 배치 */
+    flex-direction: column; /* 세로로 배치 */
+    align-items: center; /* 가운데 정렬 */
+    width: 100%; /* 가로 크기 100% */
+    max-width: 400px; /* 최대 가로 크기 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 변화 효과 */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* 마우스 올리면 위로 올라가는 효과 */
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.15); /* 그림자 더 진하게 */
+}
+
+/* 디자이너 이미지 */
+.product-img {
+    width: 100%; /* 가로 크기 100% */
+    max-width: 250px; /* 최대 가로 크기 */
+    aspect-ratio: 3/4; /* 가로:세로 비율 3:4 */
+    border-radius: 15px; /* 둥근 모서리 */
+    margin-bottom: 20px; /* 아래 여백 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    object-fit: cover; /* 비율 유지하며 채우기 */
+}
+
+/* 디자이너 정보 영역 */
+.product-info {
+    width: 100%; /* 가로 크기 100% */
+    text-align: center; /* 가운데 정렬 */
+}
+
+/* 디자이너 이름 */
+.product-designer {
+    font-size: 1.3rem; /* 글자 크기 */
+    font-weight: 700; /* 글자 굵기 */
+    color: #222; /* 글자 색깔 */
+    margin-bottom: 15px; /* 아래 여백 */
+}
+
+/* 디자이너 설명 텍스트 */
+.product-desc {
+    font-size: 0.95rem; /* 글자 크기 */
+    color: #555; /* 글자 색깔 */
+    line-height: 1.6; /* 줄간격 */
+    margin-bottom: 15px; /* 아래 여백 */
+    text-align: left; /* 왼쪽 정렬 */
+    word-break: keep-all; /* 단어 단위로 줄바꿈 */
+    overflow-wrap: break-word; /* 긴 단어는 줄바꿈 */
+}
+
+/* 짧은 설명 (처음에 보이는 부분) */
+.product-desc.short {
+    display: -webkit-box; /* 웹킷 박스 */
+    -webkit-line-clamp: 3; /* 3줄까지만 표시 */
+    -webkit-box-orient: vertical; /* 세로 방향 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+}
+
+/* 전체 설명 (더보기 클릭시 보이는 부분) */
+.product-desc.full {
+    display: block; /* 블록으로 표시 */
+}
+
+/* 더보기 버튼 */
+.more-btn {
+    background: #222; /* 검은색 배경 */
+    color: white; /* 흰색 글자 */
+    border: none; /* 테두리 없음 */
+    border-radius: 25px; /* 둥근 모서리 */
+    padding: 10px 25px; /* 안쪽 여백 */
+    font-size: 0.9rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    margin: 10px 5px; /* 여백 */
+    cursor: pointer; /* 마우스 올리면 손가락 모양 */
+    transition: all 0.3s ease; /* 모든 변화 부드럽게 */
+    min-height: 44px; /* 최소 높이 (터치하기 쉽게) */
+    display: inline-flex; /* 인라인 플렉스 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+
+.more-btn:hover {
+    background: #007bff; /* 마우스 올리면 파란색 */
+    transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+}
+
+/* 예약 버튼 (블로그 구경가기) */
+.reserve-btn {
+    display: inline-flex; /* 인라인 플렉스 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    background: #00c73c; /* 초록색 배경 */
+    color: white; /* 흰색 글자 */
+    font-size: 0.9rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    border: none; /* 테두리 없음 */
+    border-radius: 25px; /* 둥근 모서리 */
+    padding: 10px 25px; /* 안쪽 여백 */
+    text-decoration: none; /* 밑줄 제거 */
+    margin: 5px; /* 여백 */
+    box-shadow: 0 3px 10px rgba(0, 199, 60, 0.3); /* 그림자 효과 */
+    transition: all 0.3s ease; /* 모든 변화 부드럽게 */
+    min-height: 44px; /* 최소 높이 (터치하기 쉽게) */
+}
+
+.reserve-btn:hover {
+    background: #009929; /* 마우스 올리면 더 진한 초록색 */
+    transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+    box-shadow: 0 5px 15px rgba(0, 199, 60, 0.4); /* 그림자 더 진하게 */
+}
+
+/* ===================================
+   고객 리뷰 섹션 스타일 (3x2 그리드)
+   =================================== */
+
+/* 리뷰 섹션 전체 */
+.review-section {
+    width: 100vw; /* 화면 가로 전체 */
+    background: white; /* 흰색 배경 */
+    padding: 80px 0; /* 위아래 여백 */
+}
+
+/* 리뷰 컨테이너 */
+.review-container {
+    max-width: 1200px; /* 최대 가로 크기 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+}
+
+/* 리뷰 타이틀 */
+.review-title {
+    font-size: 2.5rem; /* 글자 크기 */
+    font-weight: 800; /* 글자 굵기 */
+    color: #111; /* 글자 색깔 */
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 50px; /* 아래 여백 */
+    letter-spacing: -1px; /* 글자 간격 */
+}
+
+/* 리뷰 3x2 그리드 */
+.review-grid {
+    display: grid; /* 그리드 배치 */
+    grid-template-columns: repeat(3, 1fr); /* 3열로 배치 */
+    grid-template-rows: repeat(2, 1fr); /* 2행으로 배치 */
+    gap: 25px; /* 카드 사이 간격 */
+    justify-items: center; /* 가로 가운데 정렬 */
+}
+
+/* 각 리뷰 카드 */
+.review-card {
+    background: #f9f9f9; /* 연한 회색 배경 */
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 그림자 효과 */
+    padding: 25px 20px; /* 안쪽 여백 */
+    display: flex; /* 플렉스 배치 */
+    flex-direction: column; /* 세로로 배치 */
+    align-items: center; /* 가운데 정렬 */
     text-align: center; /* 글자 가운데 정렬 */
     width: 100%; /* 가로 크기 100% */
+    max-width: 350px; /* 최대 가로 크기 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 변화 효과 */
 }
-/* 전화번호 스타일 (더 크고 파랗게) */
-.brand-contact-phone {
-    font-size: 1.25rem; /* 전화번호는 더 큰 글자 */
+
+.review-card:hover {
+    transform: translateY(-3px); /* 마우스 올리면 위로 올라가는 효과 */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* 그림자 더 진하게 */
+}
+
+/* 별점 표시 */
+.review-stars {
+    color: #FFD700; /* 금색 */
+    font-size: 1.4rem; /* 글자 크기 */
+    margin-bottom: 15px; /* 아래 여백 */
+    letter-spacing: 3px; /* 별 사이 간격 */
+    text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.3); /* 글자 그림자 */
+}
+
+/* 리뷰 메타 정보 (디자이너 | 서비스) */
+.review-meta {
+    font-size: 1rem; /* 글자 크기 */
     color: #1976d2; /* 파란색 */
-    font-weight: 900; /* 매우 굵게 */
+    margin-bottom: 8px; /* 아래 여백 */
+    font-weight: 600; /* 글자 굵기 */
 }
 
-/* =========================
-   푸터(Footer) 스타일 - 넥슨폰트 사용
-   ========================= */
+/* 리뷰 추가 정보 (날짜 | 사용자) */
+.review-extra {
+    font-size: 0.85rem; /* 글자 크기 */
+    color: #888; /* 회색 */
+    margin-bottom: 15px; /* 아래 여백 */
+}
+
+.review-user {
+    color: #009688; /* 청록색 */
+    font-weight: 500; /* 글자 굵기 */
+}
+
+/* 리뷰 내용 */
+.review-text {
+    font-size: 0.9rem; /* 글자 크기 */
+    color: #333; /* 글자 색깔 */
+    line-height: 1.6; /* 줄간격 */
+    word-break: keep-all; /* 단어 단위로 줄바꿈 */
+    overflow-wrap: break-word; /* 긴 단어는 줄바꿈 */
+}
+
+/* ===================================
+   매장소개 섹션 스타일 (사장님 인사말)
+   =================================== */
+
+/* 매장소개 섹션 전체 */
+.brand-history-section {
+    width: 100vw; /* 화면 가로 전체 */
+    background: #f5f5f5; /* 연한 회색 배경 */
+    padding: 80px 0; /* 위아래 여백 */
+}
+
+/* 매장소개 컨테이너 */
+.brand-history-container {
+    max-width: 1200px; /* 최대 가로 크기 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+    display: flex; /* 플렉스 배치 */
+    align-items: flex-start; /* 위쪽 정렬 */
+    gap: 40px; /* 이미지와 텍스트 사이 간격 */
+}
+
+/* 좌측 이미지 영역 */
+.brand-history-img-box {
+    flex: 1 1 350px; /* 플렉스 비율 */
+    display: flex; /* 플렉스 배치 */
+    flex-direction: column; /* 세로로 배치 */
+    align-items: center; /* 가운데 정렬 */
+}
+
+/* 매장소개 이미지 */
+.brand-history-img {
+    width: 100%; /* 가로 크기 100% */
+    max-width: 400px; /* 최대 가로 크기 */
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    object-fit: cover; /* 비율 유지하며 채우기 */
+    margin-bottom: 20px; /* 아래 여백 */
+}
+
+/* 제품구매 버튼 */
+.store-btn {
+    display: inline-block; /* 인라인 블록 */
+    background: #007bff; /* 파란색 배경 */
+    color: white; /* 흰색 글자 */
+    font-size: 0.9rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    border: none; /* 테두리 없음 */
+    border-radius: 25px; /* 둥근 모서리 */
+    padding: 12px 25px; /* 안쪽 여백 */
+    text-decoration: none; /* 밑줄 제거 */
+    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3); /* 그림자 효과 */
+    transition: all 0.3s ease; /* 모든 변화 부드럽게 */
+}
+
+.store-btn:hover {
+    background: #0056b3; /* 마우스 올리면 더 진한 파란색 */
+    transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+}
+
+/* 우측 텍스트 영역 */
+.brand-history-text-box {
+    flex: 2 1 500px; /* 플렉스 비율 */
+    background: white; /* 흰색 배경 */
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08); /* 그림자 효과 */
+    padding: 35px 30px; /* 안쪽 여백 */
+}
+
+/* 매장소개 타이틀 */
+.brand-history-title {
+    font-size: 1.8rem; /* 글자 크기 */
+    font-weight: 800; /* 글자 굵기 */
+    color: #111; /* 글자 색깔 */
+    margin-bottom: 25px; /* 아래 여백 */
+    letter-spacing: -1px; /* 글자 간격 */
+}
+
+/* 매장소개 설명 텍스트 */
+.brand-history-desc {
+    font-size: 1rem; /* 글자 크기 */
+    color: #333; /* 글자 색깔 */
+    line-height: 1.7; /* 줄간격 */
+    margin-bottom: 20px; /* 아래 여백 */
+    word-break: keep-all; /* 단어 단위로 줄바꿈 */
+    overflow-wrap: break-word; /* 긴 단어는 줄바꿈 */
+    white-space: pre-line; /* 줄바꿈 유지 */
+}
+
+/* 짧은 설명 (처음에 보이는 부분) */
+.brand-history-desc.short {
+    display: -webkit-box; /* 웹킷 박스 */
+    -webkit-line-clamp: 3; /* 3줄까지만 표시 */
+    -webkit-box-orient: vertical; /* 세로 방향 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+}
+
+/* 전체 설명 (더보기 클릭시 보이는 부분) */
+.brand-history-desc.full {
+    display: block; /* 블록으로 표시 */
+}
+
+/* 더보기 버튼 */
+.brand-more-btn {
+    background: #222; /* 검은색 배경 */
+    color: white; /* 흰색 글자 */
+    border: none; /* 테두리 없음 */
+    border-radius: 25px; /* 둥근 모서리 */
+    padding: 10px 25px; /* 안쪽 여백 */
+    font-size: 0.9rem; /* 글자 크기 */
+    font-weight: 600; /* 글자 굵기 */
+    margin-bottom: 20px; /* 아래 여백 */
+    cursor: pointer; /* 마우스 올리면 손가락 모양 */
+    transition: all 0.3s ease; /* 모든 변화 부드럽게 */
+    min-height: 44px; /* 최소 높이 (터치하기 쉽게) */
+    display: inline-flex; /* 인라인 플렉스 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+
+.brand-more-btn:hover {
+    background: #007bff; /* 마우스 올리면 파란색 */
+    transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+}
+
+/* 연락처 정보 박스 */
+.brand-contact {
+    margin-top: 25px; /* 위쪽 여백 */
+    font-size: 1.1rem; /* 글자 크기 */
+    color: #d32f2f; /* 빨간색 글자 */
+    font-weight: 600; /* 글자 굵기 */
+    background: #fffbe7; /* 연한 노란색 배경 */
+    border-radius: 15px; /* 둥근 모서리 */
+    padding: 20px; /* 안쪽 여백 */
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); /* 그림자 효과 */
+    text-align: center; /* 글자 가운데 정렬 */
+    border: 2px solid #ffeb3b; /* 노란색 테두리 */
+}
+
+/* 전화번호 스타일 */
+.brand-contact-phone {
+    font-size: 1.4rem; /* 글자 크기 */
+    color: #1976d2; /* 파란색 */
+    font-weight: 800; /* 글자 굵기 */
+    display: block; /* 블록으로 표시 */
+    margin-top: 8px; /* 위쪽 여백 */
+}
+
+/* ===================================
+   푸터 섹션 스타일
+   =================================== */
+
+/* 푸터 전체 */
 .footer {
-    width: 100vw;
-    background: #222;
-    color: #fff;
-    padding: 40px 0 20px 0;
-    font-family: 'NeXonGothic', 'Montserrat', sans-serif;
-    position: relative;
-    z-index: 10;
-    margin-top: 0;
+    width: 100vw; /* 화면 가로 전체 */
+    background: #222; /* 검은색 배경 */
+    color: white; /* 흰색 글자 */
+    padding: 50px 0 30px 0; /* 위아래 여백 */
 }
 
+/* 푸터 컨테이너 */
 .footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
+    max-width: 1200px; /* 최대 가로 크기 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 0 20px; /* 좌우 여백 */
+    display: flex; /* 플렉스 배치 */
+    flex-direction: column; /* 세로로 배치 */
+    align-items: center; /* 가운데 정렬 */
+    gap: 25px; /* 요소 사이 간격 */
 }
 
+/* 푸터 링크 */
 .footer-links {
-    font-size: 1.05rem;
-    margin-bottom: 8px;
+    font-size: 1rem; /* 글자 크기 */
+    margin-bottom: 10px; /* 아래 여백 */
 }
+
 .footer-link {
-    color: #fff;
-    text-decoration: underline;
-    margin: 0 4px;
-    transition: color 0.2s;
+    color: white; /* 흰색 글자 */
+    text-decoration: none; /* 밑줄 제거 */
+    margin: 0 8px; /* 좌우 여백 */
+    transition: color 0.3s ease; /* 색깔 변화 부드럽게 */
 }
+
 .footer-link:hover {
-    color: #FFD600;
+    color: #FFD700; /* 마우스 올리면 금색 */
 }
 
+/* 푸터 매장 정보 */
 .footer-info {
-    font-size: 1rem;
-    color: #eee;
-    text-align: center;
-    line-height: 1.7;
-    margin-bottom: 8px;
+    font-size: 0.95rem; /* 글자 크기 */
+    color: #eee; /* 연한 회색 글자 */
+    text-align: center; /* 가운데 정렬 */
+    line-height: 1.8; /* 줄간격 */
+    margin-bottom: 10px; /* 아래 여백 */
 }
+
 .footer-info a {
-    color: #FFD600;
-    text-decoration: underline;
+    color: #FFD700; /* 금색 링크 */
+    text-decoration: none; /* 밑줄 제거 */
 }
 
+.footer-info a:hover {
+    text-decoration: underline; /* 마우스 올리면 밑줄 */
+}
+
+/* 소셜 미디어 아이콘 */
 .footer-social {
-    display: flex;
-    gap: 18px;
-    margin: 10px 0 8px 0;
+    display: flex; /* 플렉스 배치 */
+    gap: 20px; /* 아이콘 사이 간격 */
+    margin: 15px 0; /* 위아래 여백 */
 }
+
 .footer-social-link {
-    color: #fff;
-    transition: color 0.2s;
-    display: flex;
-    align-items: center;
+    color: white; /* 흰색 아이콘 */
+    transition: all 0.3s ease; /* 모든 변화 부드럽게 */
+    display: flex; /* 플렉스 배치 */
+    align-items: center; /* 세로 가운데 정렬 */
+    padding: 8px; /* 클릭 영역 확장 */
+    border-radius: 50%; /* 원형 모양 */
 }
+
 .footer-social-link:hover {
-    color: #00c73c;
+    color: #FFD700; /* 마우스 올리면 금색 */
+    transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+    background: rgba(255, 215, 0, 0.1); /* 연한 금색 배경 */
 }
 
+/* 저작권 정보 */
 .footer-copyright {
-    font-size: 0.95rem;
-    color: #bbb;
-    margin-top: 8px;
-    text-align: center;
+    font-size: 0.85rem; /* 글자 크기 */
+    color: #aaa; /* 연한 회색 글자 */
+    text-align: center; /* 가운데 정렬 */
+    margin-top: 15px; /* 위쪽 여백 */
 }
 
-/* 반응형 */
-@media (max-width: 1200px) {
-    .nav-menu {
-        margin: 0 20px;
-    }
-    
-    .nav-menu ul {
-        gap: 40px;
-    }
-}
+/* ===================================
+   반응형 디자인 (모바일 최적화)
+   =================================== */
 
+/* 태블릿 크기 (768px 이하) */
 @media (max-width: 768px) {
+    /* 헤더 모바일 조정 */
     .header {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
+        flex-direction: column; /* 세로로 배치 */
+        padding: 20px; /* 패딩 조정 */
+        gap: 15px; /* 요소 사이 간격 */
     }
 
     .logo-container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* 세로로 배치 */
+        text-align: center; /* 가운데 정렬 */
+        gap: 10px; /* 간격 조정 */
     }
 
     .logo {
-        width: 156px;
+        width: 150px; /* 로고 크기 조정 */
     }
 
     .brand-name {
-        font-size: 28px;
-    }
-
-    .nav-menu {
-        margin: 0;
-        width: 100%;
+        font-size: 24px; /* 글자 크기 조정 */
     }
 
     .nav-menu ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        flex-direction: column; /* 세로로 배치 */
+        gap: 10px; /* 간격 조정 */
     }
 
     .login-btn {
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
+        width: 200px; /* 버튼 크기 조정 */
     }
-} 
 
-@media (max-width: 900px) {
-    .carousel, .carousel-slide {
-        height: 50vw;
-        min-height: 320px;
-        max-height: 420px;
+    /* 히어로 섹션 모바일 조정 */
+    .carousel {
+        height: 60vh; /* 높이 조정 */
+        min-height: 350px; /* 최소 높이 */
     }
+
     .slide-content {
-        padding: 24px 10px 18px 10px;
-        max-width: 95vw;
+        padding: 25px 20px; /* 패딩 조정 */
+        margin: 0 15px; /* 여백 조정 */
     }
-    .carousel-arrow.left { left: 8px; }
-    .carousel-arrow.right { right: 8px; }
-    .product-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
-        gap: 24px;
+
+    .slide-brand {
+        font-size: 1.5rem; /* 글자 크기 조정 */
     }
-    .product-main-img {
-        max-width: 95vw;
+
+    .slide-content h2 {
+        font-size: 1.2rem; /* 글자 크기 조정 */
     }
-    .review-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(3, 1fr);
-        gap: 24px;
+
+    .slide-content p {
+        font-size: 0.9rem; /* 글자 크기 조정 */
     }
-    .brand-history-container {
-        flex-direction: column;
-        gap: 24px;
-        align-items: center;
+
+    .carousel-arrow {
+        width: 40px; /* 크기 조정 */
+        height: 40px; /* 크기 조정 */
+        font-size: 1.5rem; /* 글자 크기 조정 */
     }
-    .brand-history-img {
-        max-width: 95vw;
+
+    .carousel-arrow.left {
+        left: 15px; /* 위치 조정 */
     }
-    .brand-history-text-box {
-        padding: 20px 10px 18px 10px;
-        width: 100%;
+
+    .carousel-arrow.right {
+        right: 15px; /* 위치 조정 */
     }
-}
-@media (max-width: 600px) {
-    .carousel, .carousel-slide {
-        height: 45vw;
-        min-height: 200px;
-        max-height: 320px;
-    }
-    .slide-brand { font-size: 1.2rem; }
-    .slide-content h2 { font-size: 1.1rem; }
-    .slide-content p { font-size: 0.95rem; }
-    .buy-btn { font-size: 0.95rem; padding: 8px 18px; }
-    .product-section {
-        padding: 30px 0 40px 0;
-    }
+
+    /* 디자이너 소개 모바일 조정 */
     .product-title {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+        font-size: 1.8rem; /* 글자 크기 조정 */
+        margin-bottom: 30px; /* 여백 조정 */
     }
+
+    .product-grid {
+        grid-template-columns: 1fr 1fr; /* 2열 유지 */
+        gap: 20px; /* 간격 조정 */
+    }
+
     .product-card {
-        padding: 16px 12px 14px 12px;
-        width: 100%;
-        box-sizing: border-box;
+        padding: 20px 15px; /* 패딩 조정 */
     }
+
     .product-img {
-        max-width: 100%;
-        width: 100%;
+        max-width: 200px; /* 이미지 크기 조정 */
     }
-    .product-info {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .product-desc {
-        max-width: 100%;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-        font-size: 1rem;
-        line-height: 1.8;
-        margin-bottom: 12px;
-    }
-    .review-section {
-        padding: 30px 0 40px 0;
-    }
+
+    /* 리뷰 섹션 모바일 조정 */
     .review-title {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+        font-size: 1.8rem; /* 글자 크기 조정 */
+        margin-bottom: 30px; /* 여백 조정 */
     }
-    .review-card {
-        padding: 16px 12px 14px 12px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .review-text {
-        width: 100%;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-        box-sizing: border-box;
-        font-size: 1rem;
-        line-height: 1.8;
-        margin-bottom: 0;
-    }
+
     .review-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-        gap: 16px;
+        grid-template-columns: 1fr 1fr; /* 2열로 변경 */
+        grid-template-rows: repeat(3, 1fr); /* 3행으로 변경 */
+        gap: 20px; /* 간격 조정 */
     }
-    .brand-history-section {
-        padding: 30px 0 50px 0;
-        position: relative;
-        z-index: 1;
+
+    .review-card {
+        padding: 20px 15px; /* 패딩 조정 */
     }
-    .brand-history-title {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
+
+    /* 매장소개 섹션 모바일 조정 */
     .brand-history-container {
-        flex-direction: column;
-        gap: 16px;
-        align-items: stretch;
+        flex-direction: column; /* 세로로 배치 */
+        gap: 25px; /* 간격 조정 */
     }
+
     .brand-history-img-box,
     .brand-history-text-box {
-        width: 100%;
-        min-width: 0;
+        width: 100%; /* 가로 크기 100% */
     }
-    .brand-history-img {
-        max-width: 100vw;
-        width: 100%;
-        height: auto;
-    }
-    .brand-history-text-box {
-        padding: 16px 12px 20px 12px;
-        min-width: 0;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-        width: 100%;
-        box-sizing: border-box;
-        min-height: auto;
-        margin-bottom: 20px;
-    }
-    /* 모바일에서 브랜드 히스토리 텍스트 스타일 */
-    .brand-history-desc,
-    .brand-history-desc.full {
-        color: #222;
-        font-size: 1.05rem;
-        line-height: 1.6; /* 모바일에서도 동일한 줄간격 적용 */
-        background: transparent;
-        overflow: visible;
-        display: block;
-        -webkit-line-clamp: unset;
-        white-space: pre-line;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 16px;
-    }
-    /* 모바일에서 브랜드 히스토리 일부만 보이기 (4줄) */
-    .brand-history-desc.short {
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        word-break: keep-all;
-        overflow-wrap: break-word;
-    }
-    .brand-contact {
-        font-size: 1rem;
-        padding: 8px 6px;
-    }
-    .brand-contact-phone {
-        font-size: 1.1rem;
-    }
-    .footer {
-        padding: 30px 0 20px 0;
-        margin-top: 20px;
-    }
-    .footer-container {
-        padding: 0 16px;
-        gap: 12px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .footer-info {
-        font-size: 1rem;
-        line-height: 1.8;
-    }
-    .footer-links {
-        font-size: 1rem;
-        margin-bottom: 12px;
-    }
-    .footer-copyright {
-        font-size: 0.9rem;
-        margin-top: 12px;
-    }
-    /* 모바일에서 브랜드 히스토리 전체 텍스트 최종 설정 */
-    .brand-history-desc.full {
-        display: block !important;
-        -webkit-line-clamp: unset !important;
-        overflow: visible !important;
-        white-space: pre-line !important;
-        max-height: none !important;
-        height: auto !important;
-        margin-bottom: 20px !important;
-        padding-bottom: 20px !important;
-        line-height: 1.6 !important; /* 모바일 전체 텍스트도 줄간격 조정 */
-    }
-} 
 
-.reserve-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #00c73c;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 30px;
-  text-decoration: none;
-  margin-top: 10px;
-  margin-bottom: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.2s, color 0.2s;
-  cursor: pointer;
-  min-height: 44px;
+    .brand-history-text-box {
+        padding: 25px 20px; /* 패딩 조정 */
+    }
+
+    .brand-history-title {
+        font-size: 1.5rem; /* 글자 크기 조정 */
+        margin-bottom: 20px; /* 여백 조정 */
+    }
 }
-.reserve-btn:hover {
-  background: #009688;
-  color: #fff;
+
+/* 모바일 크기 (600px 이하) */
+@media (max-width: 600px) {
+    /* 히어로 섹션 추가 조정 */
+    .carousel {
+        height: 50vh; /* 높이 더 조정 */
+        min-height: 300px; /* 최소 높이 조정 */
+    }
+
+    .slide-content {
+        padding: 20px 15px; /* 패딩 더 조정 */
+    }
+
+    .slide-brand {
+        font-size: 1.3rem; /* 글자 크기 더 조정 */
+    }
+
+    .slide-content h2 {
+        font-size: 1.1rem; /* 글자 크기 더 조정 */
+    }
+
+    .slide-content p {
+        font-size: 0.85rem; /* 글자 크기 더 조정 */
+    }
+
+    /* 섹션 패딩 조정 */
+    .product-section,
+    .review-section,
+    .brand-history-section {
+        padding: 50px 0; /* 패딩 조정 */
+    }
+
+    /* 타이틀 크기 조정 */
+    .product-title,
+    .review-title {
+        font-size: 1.5rem; /* 글자 크기 더 조정 */
+        margin-bottom: 25px; /* 여백 조정 */
+    }
+
+    /* 디자이너 그리드 1열로 변경 */
+    .product-grid {
+        grid-template-columns: 1fr; /* 1열로 변경 */
+        grid-template-rows: repeat(4, 1fr); /* 4행으로 변경 */
+        gap: 20px; /* 간격 조정 */
+    }
+
+    .product-card {
+        max-width: 350px; /* 최대 크기 조정 */
+        margin: 0 auto; /* 가운데 정렬 */
+    }
+
+    /* 리뷰 그리드 1열로 변경 */
+    .review-grid {
+        grid-template-columns: 1fr; /* 1열로 변경 */
+        grid-template-rows: repeat(6, 1fr); /* 6행으로 변경 */
+        gap: 15px; /* 간격 조정 */
+    }
+
+    .review-card {
+        max-width: 350px; /* 최대 크기 조정 */
+        margin: 0 auto; /* 가운데 정렬 */
+    }
+
+    /* 매장소개 추가 조정 */
+    .brand-history-title {
+        font-size: 1.3rem; /* 글자 크기 더 조정 */
+    }
+
+    .brand-history-desc {
+        font-size: 0.95rem; /* 글자 크기 조정 */
+    }
+
+    /* 연락처 박스 조정 */
+    .brand-contact {
+        padding: 15px; /* 패딩 조정 */
+        font-size: 1rem; /* 글자 크기 조정 */
+    }
+
+    .brand-contact-phone {
+        font-size: 1.2rem; /* 전화번호 크기 조정 */
+    }
+
+    /* 푸터 조정 */
+    .footer {
+        padding: 40px 0 20px 0; /* 패딩 조정 */
+    }
+
+    .footer-container {
+        gap: 20px; /* 간격 조정 */
+    }
+
+    .footer-info {
+        font-size: 0.9rem; /* 글자 크기 조정 */
+    }
 } 
